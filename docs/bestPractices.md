@@ -1,8 +1,7 @@
-#Digital Asset Creation Best Practice
+# Digital Asset Creation Best Practice
 
-<TODO>
+**TODO**
 Currently this is just a brain dump - needs reorganising and writing up
-
 
 ## Before creating any content
 
@@ -25,12 +24,16 @@ Currently this is just a brain dump - needs reorganising and writing up
   - If you say production ready, but the code has no error handline then it is not production ready
   - Production ready code should take security requirements into account - using unencrypted communication over public internet or unsecured API endpoints is not production ready
   - Add comments if you are deliberately removing production ready requirements to facilitate presenting more understandable code focussing on the target area of the content
+  - Ensure you have some date present so a developer can quickly tell if the content is likely to be up to date or out of date.  If git based then git provides dating evidence but many blog sites do not.  Keep date information up to date when manually specified.
+  - Call out when you are requesting a developer to install the latest available version of something or are using a specific version.  If you are installing latest version, provide some indication of what version you actually installed, as version mismatch can be where issues arise
 
 ### DevOps automation of content
 
 - When automating, ensure scripts reflect article instructions.  Don't tell developer to run a command, then achieve the same result without running the same command
 - When manual steps can't be automated, ensure that any workaround produces the same results (e.g. reflashing a raspberry pi back to fresh install state.)
 - Ensure config is not embedded in scripts.  If a developer wants to extend your content and deploy their own automation, then they should simply be able to change config and the automation should work.
+- Enable developers to quickly find out all version information used in latest successful test.
+- Have a consistent CI/CD build environment, remove any potential differences such as host OS differences.  It is usually possible to specify the environment, such as a Docker container, where all build and deploy activity takes place.
 
 ## Review content
 
