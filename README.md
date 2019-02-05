@@ -1,9 +1,9 @@
 # k8s-DevOps
-Build a DevOps environment on the k8s-RaspberryPi project using open source tools.
+Build a DevOps environment on Kubernetes using open source tools.
 
 The goal of this project is to create a devops pipeline that can be used to continually test the instructions contained in digitally available content, such as workshops, tutorials and online course material.
 
-With cloud platforms and modern software development methodologies it is often not possible to specify the versions of software needed to complete an online activity.  The rate of change of underlying platform and services is also an issue which can lead to lots of outdated instructions, with the authors often not aware that their content is broken.
+With cloud platforms and modern software development methodologies it is often not possible to specify the versions of software needed to complete an online activity.  The rate of change of underlying platform and services is also an issue which can lead to lots of outdated material, with the authors often not aware that their content is broken.
 
 Checking that content is current is a task many authors do not do, as it can be very time consuming, but outdated content frustrates developers that waste their time following content that they end up having to fix or abandon.
 
