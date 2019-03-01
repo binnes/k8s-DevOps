@@ -29,5 +29,5 @@ with open('scripts/config.json') as f:
     config = json.load(f)
 
 
-os.system("scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no k8sManifests/namespace-devops.yaml pi@{}:kubernetes/manifests/namespace-devops.yaml".format(config.kubernetes.kubectlHost))
-runRemoteCommand(config.kubernetes.kubectlHost, "kubectl apply -f /home/pi/kubernetes/manifests/metalLB-conf.yaml")
+os.system("scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no k8sManifests/namespace-devops.yaml pi@{}:kubernetes/manifests/namespace-devops.yaml".format(config["kubernetes"]["kubectlHost"]))
+runRemoteCommand(config["kubernetes"]["kubectlHost"], "kubectl apply -f /home/pi/kubernetes/manifests/metalLB-conf.yaml")

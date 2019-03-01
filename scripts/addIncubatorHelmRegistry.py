@@ -29,4 +29,4 @@ with open('scripts/config.json') as f:
     config = json.load(f)
 
 
-runRemoteCommand(config.kubernetes.kubectlHost, "helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator")
+runRemoteCommand(config["kubernetes"]["kubectlHost"], "helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator")

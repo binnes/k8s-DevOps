@@ -29,7 +29,7 @@ with open('scripts/config.json') as f:
     config = json.load(f)
 
 
-runRemoteCommand(config.kubernetes.kubectlHost, "helm install --name couchdb --set persistentVolume.enabled=true,image.repository=treehouses/couchdb,helperImage.repository=timotto/rpi-couchdb-statefulset-assembler,helperImage.tag=latest,ingress.enabled=true,ingress.hosts[0]=couchdb.bik8s.home,adminUsername=admin,adminPassword=d0rset,service.type=LoadBalancer incubator/couchdb")
+runRemoteCommand(config["kubernetes"]["kubectlHost"], "helm install --name couchdb --set persistentVolume.enabled=true,image.repository=treehouses/couchdb,helperImage.repository=timotto/rpi-couchdb-statefulset-assembler,helperImage.tag=latest,ingress.enabled=true,ingress.hosts[0]=couchdb.bik8s.home,adminUsername=admin,adminPassword=d0rset,service.type=LoadBalancer incubator/couchdb")
 time.sleep(120)
-runRemoteCommand(config.kubernetes.kubectlHost, """kubectl exec --namespace default -it couchdb-couchdb-0 -c couchdb -- curl -s     http://127.0.0.1:5984/_cluster_setup     -X POST     -H "Content-Type: application/json"     -d '{"action": "finish_cluster"}' -u admin""")
+runRemoteCommand(config["kubernetes"]["kubectlHost"], """kubectl exec --namespace default -it couchdb-couchdb-0 -c couchdb -- curl -s     http://127.0.0.1:5984/_cluster_setup     -X POST     -H "Content-Type: application/json"     -d '{"action": "finish_cluster"}' -u admin""")
                 

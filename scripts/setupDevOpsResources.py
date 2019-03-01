@@ -29,7 +29,7 @@ with open('scripts/config.json') as f:
     config = json.load(f)
 
 
-os.system("scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no k8sManifests/devops-setup/namespace-devops.yaml pi@{}:kubernetes/manifests/namespace-devops.yaml".format(config.kubernetes.kubectlHost))
-os.system("scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no k8sManifests/devops-setup/storage-devops.yaml pi@{}:kubernetes/manifests/storage-devops.yaml".format(config.kubernetes.kubectlHost))
-runRemoteCommand(config.kubernetes.kubectlHost, "kubectl apply -f /home/pi/kubernetes/manifests/namespace-devops.yaml")
-runRemoteCommand(config.kubernetes.kubectlHost, "kubectl apply -f /home/pi/kubernetes/manifests/storage-devops.yaml")
+os.system("scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no k8sManifests/devops-setup/namespace-devops.yaml pi@{}:kubernetes/manifests/namespace-devops.yaml".format(config["kubernetes"]["kubectlHost"]))
+os.system("scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no k8sManifests/devops-setup/storage-devops.yaml pi@{}:kubernetes/manifests/storage-devops.yaml".format(config["kubernetes"]["kubectlHost"]))
+runRemoteCommand(config["kubernetes"]["kubectlHost"], "kubectl apply -f /home/pi/kubernetes/manifests/namespace-devops.yaml")
+runRemoteCommand(config["kubernetes"]["kubectlHost"], "kubectl apply -f /home/pi/kubernetes/manifests/storage-devops.yaml")
