@@ -1,6 +1,6 @@
 {
     "kubernetes" : {
         "domain" : "bik8s.home",
-        "kubectlHost" : "192.168.0.199"
+        "kubectlHost" : "192.168.201.200"
     }
 }
